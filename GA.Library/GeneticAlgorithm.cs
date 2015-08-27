@@ -18,10 +18,11 @@ namespace GA.Library
 		private int maximumGenerations;
 		private int _generationCount;
 		private IRandom rand;
-		public int GenerationCount {
+		public int GenerationCount
+        {
 			get { return this._generationCount; }
 		}
-
+        
 		public GeneticAlgorithm(IRandom rand, Population candidates, Func<IOrganism, double> fitnessFunction) : this(rand, candidates, fitnessFunction, new LinearRankingSelector(rand), new Mutator(rand, 0.05), new OnePointCrossover(rand, 0.7), 0.1, 15000)
 		{
 			this.mutator.AddMutator(new BitFlipMutation(rand));
